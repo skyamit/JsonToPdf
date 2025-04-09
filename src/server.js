@@ -9,8 +9,8 @@ app.use(bodyParser.json());
 
 const fonts = {
   Poppins: {
-    normal: "Poppins-Regular.ttf",
-    bold: "Poppins-SemiBold.ttf",
+    normal: "./src/Poppins-Regular.ttf",
+    bold: "./src/Poppins-SemiBold.ttf",
   },
 };
 
