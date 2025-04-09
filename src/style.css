@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: #f4f4f4;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .slip-container {
+    width: 550px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px 30px;
+    page-break-after: always;
+  }
+
+  .slip-container:last-child {
+    page-break-after: auto;
+  }
+
+  .slip-companyname {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slip-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    margin-top: 30px;
+  }
+  .slip-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    font-size: x-large;
+  }
+
+  .slip-type {
+    font-weight: 800;
+  }
+
+  .slip-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slip-table {
+    margin-top:30px;
+    width: 100%;
+    border-collapse: collapse;
+    border:none;
+  }
+
+  .slip-table td {
+    padding: 4px 5px;
+    vertical-align: top;
+    border:none;
+  }
+
+  .slip-table td.label {
+    border:none;
+    white-space: nowrap;
+    width: 1px;
+    padding-right: 30px;
+  }
+
+  #downloadBtn {
+    margin: 20px auto;
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }

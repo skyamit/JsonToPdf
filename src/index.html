@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-page Document with Download</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link
+      rel="preload"
+      href="./style.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet';"
+    />
+    <noscript><link rel="stylesheet" href="./style.css" /></noscript>
+    <link rel="preload" href="./script.js" as="script" />
+  </head>
+  <body>
+    <button id="downloadBtn" type="button">Download workslip</button>
+    <div id="output"></div>
+    <script src="./script.js" defer></script>
+  </body>
+</html>
