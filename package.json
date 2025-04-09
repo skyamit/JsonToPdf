@@ -1,10 +1,12 @@
 {
+  "scripts": {
+  "start": "node ./src/server.js"
+},
   "dependencies": {
     "body-parser": "^2.2.0",
     "express": "^5.1.0",
     "jsdom": "^26.0.0",
     "pdf-lib": "^1.17.1",
-    "pdfmake": "^0.2.18",
-    "puppeteer": "^24.6.0"
+    "pdfmake": "^0.2.18"
   }
 }
