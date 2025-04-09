@@ -9,10 +9,10 @@ app.use(bodyParser.json());
 
 const fonts = {
   Poppins: {
-    normal: fs.readFileSync('./fonts/Poppins-Regular.ttf'),
-    bold: fs.readFileSync('./fonts/Poppins-SemiBold.ttf'),
-    italics: fs.readFileSync('./fonts/Poppins-Regular.ttf'),
-    bolditalics: fs.readFileSync('./fonts/Poppins-SemiBold.ttf')
+    normal: fs.readFileSync('./Poppins-Regular.ttf'),
+    bold: fs.readFileSync('./Poppins-SemiBold.ttf'),
+    italics: fs.readFileSync('./Poppins-Regular.ttf'),
+    bolditalics: fs.readFileSync('./Poppins-SemiBold.ttf')
   }
 };
 
