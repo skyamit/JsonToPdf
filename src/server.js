@@ -9,9 +9,11 @@ app.use(bodyParser.json());
 
 const fonts = {
   Poppins: {
-    normal: "./Poppins-Regular.ttf",
-    bold: "./Poppins-SemiBold.ttf",
-  },
+    normal: fs.readFileSync('./fonts/Poppins-Regular.ttf'),
+    bold: fs.readFileSync('./fonts/Poppins-SemiBold.ttf'),
+    italics: fs.readFileSync('./fonts/Poppins-Regular.ttf'),
+    bolditalics: fs.readFileSync('./fonts/Poppins-SemiBold.ttf')
+  }
 };
 
 const printer = new PdfPrinter(fonts);
