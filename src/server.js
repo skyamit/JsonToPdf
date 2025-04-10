@@ -7,12 +7,12 @@ const port = 3000;
 app.use(bodyParser.json());
 
 const fonts = {
-  Roboto: {
-    normal: undefined,
-    bold: undefined,
-    italics: undefined,
-    bolditalics: undefined
-  }
+  Helvetica: {
+    normal: "Helvetica",
+    bold: "Helvetica-Bold",
+    italics: "Helvetica-Oblique",
+    bolditalics: "Helvetica-BoldOblique",
+  },
 };
 
 const printer = new PdfPrinter(fonts);
@@ -83,12 +83,9 @@ app.post("/generate-pdf", (req, res) => {
           ],
         },
         layout: {
-          hLineWidth: function (i, node) {
-            return i === 0 || i === node.table.body.length ? 1 : 0; 
-          },
-          hLineColor: function (i, node) {
-            return "#ccc"; 
-          },
+          hLineWidth: (i, node) =>
+            i === 0 || i === node.table.body.length ? 1 : 0,
+          hLineColor: () => "#ccc",
           vLineWidth: () => 0,
         },
         margin: [0, 30, 0, 10],
@@ -114,7 +111,7 @@ app.post("/generate-pdf", (req, res) => {
       subheader: { fontSize: 14, margin: [0, 5] },
     },
     defaultStyle: {
-      font: "Poppins",
+      font: "Helvetica",
     },
     pageMargins: [80, 40, 80, 40],
   };
@@ -124,7 +121,7 @@ app.post("/generate-pdf", (req, res) => {
   pdfDoc.on("data", (chunk) => chunks.push(chunk));
   pdfDoc.on("end", () => {
     const pdfBuffer = Buffer.concat(chunks);
-    const today = formatDate(new Date()).replace(/\\s/g, "-");
+    const today = formatDate(new Date()).replace(/\s/g, "-");
     res.setHeader(
       "Content-Disposition",
       `attachment; filename=workslip-${today}.pdf`
