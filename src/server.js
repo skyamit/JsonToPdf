@@ -56,9 +56,9 @@ app.post("/generate-pdf", (req, res) => {
   const { arr } = req.body;
   let fileName = "";
   const length = arr.length;
-  for(let i=0; i<length; i++) {
-    const {id} = arr[i];
-    console.log(id)
+  for (let i = 0; i < length; i++) {
+    const { id } = arr[i];
+    console.log(id);
     fileName = fileName + id;
   }
   if (!Array.isArray(arr)) {
@@ -106,7 +106,7 @@ app.post("/generate-pdf", (req, res) => {
         layout: "noBorders",
         margin: [0, 10],
       },
-      { text: "", pageBreak: index < arr.length - 1 ? "after" : undefined }
+      { text: "\n\n", pageBreak: (index + 1) % 2 === 0 && index < arr.length - 1 ? "after" : undefined      }
     );
   });
 
