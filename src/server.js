@@ -1,18 +1,17 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const PdfPrinter = require("pdfmake");
-const fs = require("fs");
 const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
 
 const fonts = {
-  Poppins: {
-    normal: fs.readFileSync('./Poppins-Regular.ttf'),
-    bold: fs.readFileSync('./Poppins-SemiBold.ttf'),
-    italics: fs.readFileSync('./Poppins-Regular.ttf'),
-    bolditalics: fs.readFileSync('./Poppins-SemiBold.ttf')
+  Roboto: {
+    normal: 'fonts/Roboto-Regular.ttf',
+    bold: 'fonts/Roboto-Medium.ttf',
+    italics: 'fonts/Roboto-Italic.ttf',
+    bolditalics: 'fonts/Roboto-MediumItalic.ttf'
   }
 };
 
