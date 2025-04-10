@@ -8,10 +8,10 @@ app.use(bodyParser.json());
 
 const fonts = {
   Roboto: {
-    normal: 'fonts/Roboto-Regular.ttf',
-    bold: 'fonts/Roboto-Medium.ttf',
-    italics: 'fonts/Roboto-Italic.ttf',
-    bolditalics: 'fonts/Roboto-MediumItalic.ttf'
+    normal: undefined,
+    bold: undefined,
+    italics: undefined,
+    bolditalics: undefined
   }
 };
 
