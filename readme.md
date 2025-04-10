@@ -3,8 +3,8 @@ npm install pdfmake
 
 npm start
 
-Call API - http://localhost:3000/generate-pdf
-
+API - https://jsontopdf.onrender.com/generate-pdf
+Method: POST
 Payload ref - 
 {
     "arr": [

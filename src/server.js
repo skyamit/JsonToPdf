@@ -54,7 +54,13 @@ function formatDate(dateStr) {
 
 app.post("/generate-pdf", (req, res) => {
   const { arr } = req.body;
-
+  let fileName = "";
+  const length = arr.length;
+  for(let i=0; i<length; i++) {
+    const {id} = arr[i];
+    console.log(id)
+    fileName = fileName + id;
+  }
   if (!Array.isArray(arr)) {
     return res.status(400).json({ error: "Invalid array input." });
   }
@@ -124,7 +130,8 @@ app.post("/generate-pdf", (req, res) => {
     const today = formatDate(new Date()).replace(/\s/g, "-");
     res.setHeader(
       "Content-Disposition",
-      `attachment; filename=workslip-${today}.pdf`
+      // `attachment; filename=workslip-${today}.pdf`
+      `attachment; filename=workslip-${fileName}.pdf`
     );
     res.setHeader("Content-Type", "application/pdf");
     res.send(pdfBuffer);
